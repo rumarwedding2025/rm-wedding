@@ -1,73 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rushan & Maryam Wedding Invite</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #000;
-      text-align: center;
-      color: #fff;
-    }
-
-    .background-video {
-      width: 100%;
-      height: auto;
-      max-height: 100vh;
-      object-fit: cover;
-      display: block;
-      background-color: #000; /* fallback in case video doesn't load */
-      pointer-events: none;
-    }
-
-    .details {
-      padding: 24px;
-    }
-
-    .details h1 {
-      margin: 0;
-      font-size: 1.8em;
-    }
-
-    .details p {
-      margin: 6px 0;
-      font-size: 1em;
-    }
-
-    .rsvp-button {
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #A0522D;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .rsvp-button:hover {
-      background-color: #8B4513;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rushan & Maryam Wedding Invite</title>
+<style>
+  body {
+    background: black;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  video {
+    width: 100%;
+    max-height: 50vh;
+    border-radius: 8px;
+    background-color: #000;
+  }
+  #unmuteBtn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #A0522D;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+  }
+</style>
 </head>
-
 <body>
-  <video autoplay playsinline loop preload="auto" class="background-video">
-    <source src="copy_5C1E2A66-9A52-43A7-9A91-6162C15FD75B.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
 
-  <div class="details">
-    <h1>Rushan & Maryam</h1>
-    <p>November 28th, 2025 — 3:00 PM</p>
-    <p>White's Ferry Manor</p>
-    <p>42476 Whites Ferry Rd, Leesburg, VA 20176</p>
-    <a href="#" class="rsvp-button">RSVP Now</a>
-  </div>
+<video id="weddingVideo" autoplay muted loop playsinline>
+  <source src="copy_5C1E2A66-9A52-43A7-9A91-6162C15FD75B.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+<button id="unmuteBtn">Unmute Music</button>
+
+<div class="details">
+  <h1>Rushan & Maryam</h1>
+  <p>November 28th, 2025 — 3:00 PM</p>
+  <p>White's Ferry Manor</p>
+  <p>42476 Whites Ferry Rd, Leesburg, VA 20176</p>
+  <a href="YOUR_RSVP_LINK_HERE" target="_blank" rel="noopener noreferrer" class="rsvp-button">RSVP Now</a>
+</div>
+
+<script>
+  const video = document.getElementById('weddingVideo');
+  const btn = document.getElementById('unmuteBtn');
+
+  btn.addEventListener('click', () => {
+    video.muted = false;   // unmute
+    video.play();          // play video in case it paused
+    btn.style.display = 'none';  // hide button after unmuting
+  });
+</script>
+
 </body>
 </html>

@@ -13,12 +13,13 @@
       color: #fff;
     }
 
-    video.background-video {
+    .background-video {
       width: 100%;
       height: auto;
       max-height: 100vh;
       object-fit: cover;
       display: block;
+      background-color: #000; /* fallback in case video doesn't load */
       pointer-events: none;
     }
 
@@ -56,7 +57,7 @@
 </head>
 
 <body>
-  <video autoplay muted playsinline loop preload="auto" poster="#" class="background-video">
+  <video autoplay muted playsinline loop preload="auto" class="background-video">
     <source src="copy_5C1E2A66-9A52-43A7-9A91-6162C15FD75B.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
@@ -69,6 +70,4 @@
     <a href="#" class="rsvp-button">RSVP Now</a>
   </div>
 </body>
-</html>
-
 </html>

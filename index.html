@@ -1,62 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rushan & Maryam Wedding Invite</title>
-<style>
-  body {
-    background: black;
-    color: white;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  video {
-    width: 100%;
-    max-height: 50vh;
-    border-radius: 8px;
-    background-color: #000;
-  }
-  #unmuteBtn {
-    margin-top: 20px;
-    padding: 12px 24px;
-    font-size: 18px;
-    background-color: #A0522D;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rushan & Maryam Wedding Invite</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+    video {
+      width: 100%;
+      max-height: 50vh;
+      border-radius: 8px;
+      background-color: #000;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+    #unmuteBtn {
+      margin-top: 10px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #A0522D;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      display: inline-block;
+    }
+    #unmuteBtn:hover,
+    #unmuteBtn:focus {
+      background-color: #8B4513;
+      outline: none;
+    }
+    .details {
+      max-width: 400px;
+      margin: 20px auto 0 auto;
+      padding: 0 10px;
+    }
+    .details h1 {
+      font-size: 1.6rem;
+      margin: 0 0 10px 0;
+      line-height: 1.2;
+    }
+    .details p {
+      font-size: 1rem;
+      margin: 6px 0;
+      line-height: 1.4;
+    }
+    .rsvp-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background-color: #A0522D;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(160, 82, 45, 0.4);
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .rsvp-button:hover,
+    .rsvp-button:focus {
+      background-color: #8B4513;
+      outline: none;
+    }
+  </style>
 </head>
 <body>
+  <video id="weddingVideo" autoplay muted loop playsinline>
+    <source src="copy_5C1E2A66-9A52-43A7-9A91-6162C15FD75B.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-<video id="weddingVideo" autoplay muted loop playsinline>
-  <source src="copy_5C1E2A66-9A52-43A7-9A91-6162C15FD75B.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
+  <button id="unmuteBtn">Unmute Music</button>
 
-<button id="unmuteBtn">Unmute Music</button>
+  <div class="details">
+    <h1>Rushan & Maryam</h1>
+    <p>November 28th, 2025 — 3:00 PM</p>
+    <p>White's Ferry Manor</p>
+    <p>42476 Whites Ferry Rd, Leesburg, VA 20176</p>
+    <a href="https://withjoy.com/maryam-and-rushan/edit/cards/digital/customize/9c6e48cf-2a85-4b44-a746-ce1dd253d07c?step=cardFront" target="_blank" rel="noopener noreferrer" class="rsvp-button">RSVP Now</a>
+  </div>
 
-<div class="details">
-  <h1>Rushan & Maryam</h1>
-  <p>November 28th, 2025 — 3:00 PM</p>
-  <p>White's Ferry Manor</p>
-  <p>42476 Whites Ferry Rd, Leesburg, VA 20176</p>
-  <a href="YOUR_RSVP_LINK_HERE" target="_blank" rel="noopener noreferrer" class="rsvp-button">RSVP Now</a>
-</div>
+  <script>
+    const video = document.getElementById('weddingVideo');
+    const btn = document.getElementById('unmuteBtn');
 
-<script>
-  const video = document.getElementById('weddingVideo');
-  const btn = document.getElementById('unmuteBtn');
-
-  btn.addEventListener('click', () => {
-    video.muted = false;   // unmute
-    video.play();          // play video in case it paused
-    btn.style.display = 'none';  // hide button after unmuting
-  });
-</script>
-
+    btn.addEventListener('click', () => {
+      video.muted = false;
+      video.play();
+      btn.style.display = 'none';
+    });
+  </script>
 </body>
 </html>

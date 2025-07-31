@@ -5,19 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rushan & Maryam Wedding Invite</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #fff;
-      text-align: center;
-      color: #333;
-    }
-    video {
-      width: 100%;
-      height: auto;
-      max-height: 100vh;
-      display: block;
-    }
+   body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #000; /* black background */
+  text-align: center;
+  color: #fff; /* also change text color to white for contrast */
+}
+    video.background-video {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: cover;
+  display: block;
+  pointer-events: none; /* optional: disables interaction */
+}
     .details {
       padding: 24px;
     }
@@ -46,11 +48,10 @@
     }
   </style>
 </head>
-<body>
-  <video controls poster="#" preload="auto">
-    <source src="copy_5C1E2A66-9A52-43A7-9A91-6162C15FD75B.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+<video autoplay muted playsinline loop preload="auto" poster="#" class="background-video">
+  <source src="copy_5C1E2A66-9A52-43A7-9A91-6162C15FD75B.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
   <div class="details">
     <h1>Rushan & Maryam</h1>
